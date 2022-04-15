@@ -1,0 +1,26 @@
+var 1
+
+let b:number = prompt ("inserisci la base");
+
+let h:number = prompt ("inserisci l'altezza");
+
+const area:number = (b*h);
+const perimetro:number = (2*b+2*h);
+
+console.log (area);
+console.log (perimetro);
+
+--------------------------------------------------
+var 2
+
+let input:string = prompt ("inresci la base");
+let base:number = +input;
+
+input = prompt ("inserisci l'altezza");
+let altezza:number = +input;
+
+const area = (altezza * base);
+console.log (area);
+
+const perimetro = (2*(base + altezza));
+console.log (perimetro);
