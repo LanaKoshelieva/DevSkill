@@ -1,0 +1,19 @@
+let input:string = prompt ("inserisci un numero");
+let number1:number = +input;
+console.log (number1);
+
+input = prompt ("inserisci un altro numero");
+let number2:number = +input;
+console.log (number2);
+
+const somma = (number1 + number2);
+console.log (somma);
+
+const sottrazione = (number1 - number2);
+console.log (sottrazione);
+
+const moltiplicazione  = (number1 * number2);
+console.log (moltiplicazione );
+
+const divisione  = (number1 / number2);
+console.log (divisione );
