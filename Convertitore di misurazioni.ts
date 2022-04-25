@@ -1,39 +1,61 @@
-function celsiusToFahrenhait(gradiC:number):number {
-    return (gradiC*1.8) + 32;
+function celsiusToFahrenheit (gradiC:number):number {
+    return gradiC * 9 / 5 + 32;
 }
-function fahrenhaitToCelsius(gradiF:number):number {
-    return (gradiF -32) * (1.8);
+
+function fahrenheitToCelsius (gradiF:number):number {
+   return (gradiF-32) * 5 / 9;  
 }
-function kilometerToMile(distanzaK:number):number {
-    return distanzaK * 0.6214;
+
+function milesToKilometers (distanzaM:number):number {
+    return distanzaM * 1.60934;
 }
-function mileToKilometer(distanzaM:number):number {
-    return distanzaM * 1.6090;;
+
+function kilometersToMiles (distanzaKm:number):number {
+    return distanzaKm / 1.60934;
+}
+
+
+
+function convertiTemp(misuraOr:number, unitaOr:string):string {    
+    if (unitaOr.toUpperCase() == "C") {
+        return "Il valore convertito è: " + celsiusToFahrenheit(misuraOr) + "F";
+    } else if (unitaOr.toUpperCase() == "F") {
+        return "Il valore convertito è: " + fahrenheitToCelsius(misuraOr) + "C";
+    }
+
+    return "I valori della temperatura non sono corretti"; 
+}
+
+
+function convertiDist(misuraOr:number, unitaOr:string):string {
+    if (unitaOr.toUpperCase() == "KM") {
+        return "Il valore convertito è: " + kilometersToMiles(misuraOr) + "Miles";
+    } else if (unitaOr.toUpperCase() == "MILES" || unitaOr.toUpperCase() == "MI") {
+        return "Il valore convertito è: " + milesToKilometers(misuraOr) + "Km";
+    } 
+    
+    return "I valori della distanza non sono corretti"; 
 }
 
 function misuraDaConvertire(misura:number):string {
+    
     let unitaOr:string = prompt ("Inserisci unità di misurazione originale");
     let misuraOr:number = prompt ("Inserisci misurazione originale") ;
     
     
     if ( misura == 1) {
-        if (unitaOr == "c" || unitaOr == "C") {
-            return "Il valore convertito è: " + celsiusToFahrenhait(misuraOr) + "F";
-        } else 
-        if (unitaOr == "f" || unitaOr == "F") {
-            return "Il valore convertito è: " + fahrenhaitToCelsius(misuraOr) + "C";
-        } 
-    } else 
-    
-    if ( misura == 2) {
-        if (unitaOr == "km" || unitaOr == "KM" || unitaOr == "Km") {
-            return "Il valore convertito è: " + kilometerToMile(misuraOr) + "Milles";
-        } else 
-        if (unitaOr == "Miles" || unitaOr == "MILLES" || unitaOr == "milles") {
-            return "Il valore convertito è: " + mileToKilometer(misuraOr) + "Km";
-        }
+        return convertiTemp(misuraOr, unitaOr);     
+
+    } else if ( misura == 2) {
+        return convertiDist(misuraOr, unitaOr);  
     }
+	
+	return "Il risultato non puo essere calcolato";
 }
 
+
 let input:number = prompt ("Che tipo di misurazione vuoi convertire? \nPer gradi inserisci 1, per distanza - 2");
+
 console.log(misuraDaConvertire(input));
+
+
