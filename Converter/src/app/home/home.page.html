@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      {{title}} 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="body">
+    <div class="container">    
+      <ion-grid class="set-grid">        
+        <ion-row class="row">
+          <ion-col class="col-left" size="12" size-md>
+            <ion-input [(ngModel)]="celsius" class="input" id="celsius" placeholder= "C" type="number" (ngModelChange)="cInput($event)"></ion-input>
+          </ion-col>
+          <span class="span">=</span>
+          <ion-col class="col-left" size="12" size-md>
+            <ion-input [(ngModel)]="fahrenheit" class="input" id="fahrenheit" placeholder= "F" type="number" (ngModelChange)="fInput($event)"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row">
+          <ion-col class="col-right" size="12" size-md>
+            <ion-input [(ngModel)]="kilometers" class="input" id="kilometers" placeholder= "Km" type="number" (ngModelChange)="kInput($event)"></ion-input>
+          </ion-col>
+          <span class="span">=</span>
+          <ion-col class="col-right" size="12" size-md>
+            <ion-input [(ngModel)]="miles" class="input" id="miles" placeholder= "Mi" type="number" (ngModelChange)="mInput($event)"></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="row">
+          <ion-button class="my-button" (click)="reset()" size="12" size-md>Reset</ion-button> 
+        </ion-row>
+
+      </ion-grid>
+    </div>
+  </div>
+
+</ion-content>
+
+<!-- <script src="home.page.ts"></script> -->
+
+
