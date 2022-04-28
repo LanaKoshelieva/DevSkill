@@ -92,7 +92,7 @@ let numero3:number = prompt ("Inserisci qualsiasi numero diverso dai primi due")
 
 console.log("Il numero maggiore e' numero: " + scegliMaggiore(numero1, numero2, numero3));
 
-----------Vettori------------------
+----------Vettori-----------------------
 
 function scegliMaggiore (numero1:number, numero2:number, numero3:number):number {
     
