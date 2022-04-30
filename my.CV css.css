@@ -1,0 +1,70 @@
+body {
+    margin: 40px;
+    width: 60%;
+    background-color: rgb(244, 247, 108);
+}
+
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-weight: normal;
+}
+
+.features-tab, .motivation, .fut-progects {
+    margin-top: 40px;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.left-size {
+    width: 30%;
+}
+
+.right-size {
+    font-family: 'Dancing Script', cursive; 
+    font-size: 24px;
+    width: 70%;
+    margin-left: 120px;
+}
+
+img {
+    height: 270px;
+    width: auto;
+}
+
+.prof-name {
+    font-weight: bolder;
+    font-size: 28px;
+    margin: 0px;
+}
+
+.contacts {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Anek Odia', sans-serif;
+}
+
+table {
+    width: 100%;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    border: 1px solid;
+    text-align: center;
+}
+
+th {
+    width: 14%;
+}
+
+.paragraph {
+    font-size: 18px;
+}
+

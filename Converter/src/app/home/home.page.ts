@@ -14,20 +14,22 @@ export class HomePage {
   miles:number;
 
   celsiusToFahrenheit (gradiC:number):number {
-    return gradiC * 9 / 5 + 32;
+    return +(gradiC * 9 / 5 + 32).toFixed(3);
   }
 
   fahrenheitToCelsius (gradiF:number):number {
-    return (gradiF-32) * 5 / 9;  
+    return +((gradiF-32) * 5 / 9).toFixed(3);  
   }
 
   milesToKilometers (distanzaM:number):number {
-    return distanzaM * 1.60934;
+    return +(distanzaM * 1.60934).toFixed(3);
   }
 
   kilometersToMiles (distanzaKm:number):number {
-    return distanzaKm / 1.60934;
+    return +(distanzaKm / 1.60934).toFixed(3);
   }
+
+
 
   reset() {
     console.log("reset");
