@@ -1,3 +1,5 @@
+ESERCIZI 27.04
+
 //Scrivere un programma che sceglie numero massimo e numero minimo in un vettore di dimensione 10 ( valori scelti a piacimento)
 
 function scegliMinore(array:number []):number {
@@ -130,6 +132,8 @@ for (let valore=0; valore<array.length; valore++){
 
 console.log("Il numero che capita più volte è: " +tasca)
 
+----------------------------------------------------------------------
+
 //Scrivere un programma restituisca i primi 30 numeri primi.
 
 function sonoprimo(n:number):boolean {    
@@ -155,3 +159,129 @@ while(numeri_primi.length < 30) {
 }
 
 console.log(numeri_primi);
+
+----------------------------------------------------------------------
+
+
+ESERCIZI 05.05
+
+----------------------------------------------------------------------
+
+//Scrivere un programma che popoli due array A , B di dimensione N identica ed arbitraria ( min 5 , Max 10 ) i cui valori sono presi in input.
+//Successivamente creare un terzo array C di dimensione N dove nelle posizioni pari verranno inseriti i valori dell'array A e in quelle dispari i valori dell'array B
+
+let numeriA = +prompt ("Inserisci un numero per popolare array A");
+let A:number[] = [];
+A.push(numeriA);
+
+while (A.length != 7) {
+    A.push(numeriA);
+    numeriA = +prompt ("Inderisci un altro numero");
+}
+
+let numeriB = +prompt ("Inserisci un numero per popolare array B");
+let B:number[] = [];
+B.push(numeriB);
+
+while (B.length != 7) {
+    B.push(numeriB);
+    numeriB = +prompt ("Inderisci un altro numero");
+}
+
+let C = riempiC(A, B);
+
+console.log("A: ", + A)
+console.log("B: ", + B)
+
+function riempiC (A:number[], B:number[]):number[] {
+	let C:number[] = [];
+	for( let i = 0; i < (A.length) ; i++ ){
+		if(i%2==0)
+		C.push (A[i]);
+		else
+		C.push (B[i]);
+	}
+    return C;
+}
+console.log("C: ", + C)
+
+----------------------------------------------------------------------
+
+// Prendere in input una sequenza di numeri terminata da -1 e stampare a schermo la lunghezza della sequenza ripetuta piu` lunga.
+// Una sequenza e` la successione di numeri uguali e consecutiva senza interruzioni di almeno lunghezza 2
+// Se esistono piu` sequenze con lo stesso valore, stampare la prima di esse
+
+let input:number = +prompt ("Inserisci un numero");
+let array:number[] = [];
+array.push(input);
+
+while (input != -1) {
+    input = +prompt ("Inserisci un altro numero \n -1 per terminare");   
+    array.push(input);
+}
+
+console.log (array)
+
+let tasca = 1; 
+let valore; 
+let tascaMax = 1;
+
+for (let i=1; i< array.length; i++) {
+    if (array[i] == array[i-1]) {
+        tasca = tasca +1; 
+        if (tasca > tascaMax){
+        valore = array[i];
+        tascaMax = tasca;
+        } 
+    }else 
+    {
+        tasca = 1;
+    }
+}
+if (tascaMax <= 2) {
+    console.log("La sequenza non è valida")
+} else {
+    console.log("Numero " + valore + " con la lunghezza " + tascaMax)
+}
+
+----------------------------------------------------------------------
+
+// Scrivere un programma che popoli due array A , B di dimensione N,M arbitraria ( min 5 , Max 10 ) i cui valori sono presi in input.
+// Successivamente creare un terzo array C di dimensione N+M dove nelle posizioni da 0 a N inserite i valori A e nelle posizioni da N+1 a M inserite i valori di B al contrario
+
+let A:number[] = [];
+let domandaA:number = +prompt ("Quanti numeri vuoi scegliere per A?");
+
+let B:number[] = [];
+let domandaB:number = +prompt ("Quanti numeri vuoi scegliere per B?");
+
+
+if ((domandaA >= 5 && domandaB >= 5) && (domandaA <=10 && domandaB <=10)) {
+    let C:number[] = [];
+
+    for (let i = 0; i < domandaA; i++ ) {
+        let input:number = +prompt ("Inscerisci il numero " + (i+1) + " di A");
+        A.push(input);
+    }
+
+    for (let i = 0; i < domandaB; i++ ) {
+        let input:number = +prompt ("Inscerisci il numero " + (i+1) + " di B");
+        B.push(input);
+    }     
+
+      console.log(A);
+      console.log(B);
+    
+    for (let i=0; i < A.length; i++) {
+        C.push(A[i]);
+    }
+
+    for (let i=B.length-1; i>=0; i--) {
+        C.push(B[i]);
+    }
+
+    console.log(C);
+
+} else {
+    alert ("I valori devono essere compresi da 5 a 10");
+}
