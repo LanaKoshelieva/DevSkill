@@ -13,7 +13,6 @@ function scegliMinore(array:number []):number {
             min = array[i];
         } 
     }
-
     return min;
 }
 
@@ -28,7 +27,6 @@ function scegliMaggiore(array:number []):number {
             max = array[i];
         } 
     }
-
     return max;
 }
 
@@ -165,7 +163,7 @@ console.log(numeri_primi);
 
 ESERCIZI 05.05
 
-----------------------------------------------------------------------
+-----------------------------Esercizio 1-----------------------------------------
 
 //Scrivere un programma che popoli due array A , B di dimensione N identica ed arbitraria ( min 5 , Max 10 ) i cui valori sono presi in input.
 //Successivamente creare un terzo array C di dimensione N dove nelle posizioni pari verranno inseriti i valori dell'array A e in quelle dispari i valori dell'array B
@@ -205,7 +203,40 @@ function riempiC (A:number[], B:number[]):number[] {
 }
 console.log("C: ", + C)
 
-----------------------------------------------------------------------
+----------------------------------------------------------------
+
+let domanda:number = +prompt("Inserisci la dimansione degli Array \nMin 5 Max 10 ")
+
+if (domanda<5 || domanda>10) {
+    alert ("I valori devono essere compresi da 5 a 10");
+} else {
+    let A:number[] = [];
+    let B:number[] = [];
+    let C:number[] = [];
+
+    for (let i=0; i < domanda; i++){
+        let input: number = +prompt ("Inscerisci il numero " + (i+1) + " di A");
+        A[i] = input;
+    }
+    console.log("A: ", + A)
+    
+    for (let i=0; i < domanda; i++){
+        let input: number = +prompt ("Inscerisci il numero " + (i+1) + " di B");
+        B[i] = input;
+    }
+    console.log("B: ", + B)
+
+    for (let i=0; i < domanda; i++){
+        if(i%2==0) {
+            C[i]= A[i];
+        } else {
+            C[i] = B[i];
+		}
+    }
+console.log("C: ", + C);
+}
+
+-----------------------------Esercizio 2-----------------------------------------
 
 // Prendere in input una sequenza di numeri terminata da -1 e stampare a schermo la lunghezza della sequenza ripetuta piu` lunga.
 // Una sequenza e` la successione di numeri uguali e consecutiva senza interruzioni di almeno lunghezza 2
@@ -244,7 +275,7 @@ if (tascaMax <= 2) {
     console.log("Numero " + valore + " con la lunghezza " + tascaMax)
 }
 
-----------------------------------------------------------------------
+-----------------------------Esercizio 3-----------------------------------------
 
 // Scrivere un programma che popoli due array A , B di dimensione N,M arbitraria ( min 5 , Max 10 ) i cui valori sono presi in input.
 // Successivamente creare un terzo array C di dimensione N+M dove nelle posizioni da 0 a N inserite i valori A e nelle posizioni da N+1 a M inserite i valori di B al contrario
@@ -285,3 +316,50 @@ if ((domandaA >= 5 && domandaB >= 5) && (domandaA <=10 && domandaB <=10)) {
 } else {
     alert ("I valori devono essere compresi da 5 a 10");
 }
+
+-----------------------------Esercizio 3n +1 -----------------------------------------
+
+let N1:number = numero();
+let N2:number = numero();
+
+function numero():number 
+{
+    return +prompt("Inserisci un numero");
+}
+
+function calcolaGiro (numero:number):number 
+{
+    let count:number = 1; 
+    while (numero != 1) 
+    {
+        if (numero %2 == 0) 
+        {
+            numero = numero /2;
+        } 
+        else 
+        {
+            numero = numero*3 +1;
+        } 
+        count ++;
+    } 
+    return count;
+
+} 
+
+let risultatoMax = 0;
+
+if (N1 > N2) 
+{
+  alert ("Il primo numero deve essere minore del secondo")
+} 
+else {
+  for (let i=N1; i<=N2; i++) 
+  {
+      let risultato:number = calcolaGiro(i);
+      if (risultato > risultatoMax) 
+      { 
+          risultatoMax = risultato;
+      }
+  }
+}
+console.log(N1, N2, risultatoMax )
