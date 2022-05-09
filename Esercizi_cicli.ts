@@ -348,9 +348,9 @@ function calcolaGiro (numero:number):number
 
 let risultatoMax = 0;
 
-if (N1 > N2) 
+if (N1 > N2 || N1 == N2 || (N1 < 0 || N1 > 10000) || (N2 < 0 || N2 > 10000)) 
 {
-  alert ("Il primo numero deve essere minore del secondo")
+  alert ("Il primo numero deve essere minore del secondo. \nI numeri non possono essere minori di 0 e maggiori di 10000")
 } 
 else {
   for (let i=N1; i<=N2; i++) 
