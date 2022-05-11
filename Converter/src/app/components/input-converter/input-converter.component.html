@@ -1,0 +1,9 @@
+<ion-col class="col-right" size="12" size-md>
+  <ion-input [(ngModel)]="from" class="input" placeholder= {{inputFrom}} type="number" (ngModelChange)="fromChanged($event)"></ion-input>
+</ion-col>
+
+<span class="span">=</span>
+
+<ion-col class="col-right" size="12" size-md>
+<ion-input [(ngModel)]="to" class="input" placeholder= {{inputTo}} type="number" (ngModelChange)="toChanged($event)"></ion-input>
+</ion-col>

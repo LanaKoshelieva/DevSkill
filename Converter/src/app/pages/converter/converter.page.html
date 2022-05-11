@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>converter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" id="container">    
+    <ion-grid class="set-grid">   
+
+      <ion-row class="row">
+       <app-input-converter inputFrom="C" inputTo="F"></app-input-converter>
+      </ion-row>
+
+      <ion-row class="row">
+       <app-input-converter inputFrom="KM" inputTo="MI"></app-input-converter>
+      </ion-row>
+
+      <ion-row class="row">
+        <ion-button class="my-button" (click)="reset($event)" size="12" size-md>Reset</ion-button> 
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-content>

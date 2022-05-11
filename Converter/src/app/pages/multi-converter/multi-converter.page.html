@@ -1,0 +1,30 @@
+
+<ion-content>
+  <ion-grid class="set-grid">
+    <ion-row class="my-row">
+      <ion-col class="my-heading-col">
+        <p>Temperature</p>        
+      </ion-col>
+      <ion-col class="my-heading-col">
+        <p>Lunghezze</p>        
+      </ion-col>
+    </ion-row>
+    <ion-row class="my-row">
+      <ion-col class="my-col">
+        <app-input-multi-converter label="C" [valore]="c" (eventoConversione)="notificaConversione($event)"></app-input-multi-converter>
+      </ion-col>
+      <ion-col class="my-col">
+        <app-input-multi-converter label="F" [valore]="f" (eventoConversione)="notificaConversione($event)"></app-input-multi-converter>      
+      </ion-col >
+      <ion-col class="my-col">
+        <app-input-multi-converter label="KM" [valore]="km" (eventoConversione)="notificaConversione($event)"></app-input-multi-converter>       
+      </ion-col>
+      <ion-col class="my-col">
+        <app-input-multi-converter label="MI" [valore]="mi" (eventoConversione)="notificaConversione($event)"></app-input-multi-converter>
+      </ion-col>
+    </ion-row>
+  
+
+  </ion-grid>
+</ion-content>
+
