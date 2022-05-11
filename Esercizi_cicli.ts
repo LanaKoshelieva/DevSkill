@@ -6,7 +6,7 @@ function scegliMinore(array:number []):number {
     
     let min = array[0];
 
-    for (let i=1; i<array.lenght; i++) {
+    for (let i=1; i<array.length; i++) {
         
         if (array[i] < min )
         {
@@ -20,7 +20,7 @@ function scegliMaggiore(array:number []):number {
     
     let max = array[0];
 
-    for (let i=1; i<array.lenght; i++) {
+    for (let i=1; i<array.length; i++) {
         
         if (array[i] > max )
         {
@@ -363,3 +363,184 @@ else {
   }
 }
 console.log(N1, N2, risultatoMax )
+
+-----------------------------Esercizio Ugly numbers -----------------------------------------
+
+function isUgly (n:number):boolean 
+{
+    while (n != 1) 
+    {
+        if (n%2 == 0) 
+        {
+            n = n /2
+        } else
+        if (n%3 == 0) 
+        {
+            n = n /3
+        } else
+        if (n%5 == 0) 
+        {
+            n = n /5
+        } else 
+        return false
+    } 
+    return true;
+}
+
+let x = 1;
+let contare = 0
+while (contare < 1500)
+{
+    if (isUgly(x) == true) 
+    {
+        contare = contare+1;
+    }
+    x = x+1;
+}    
+console.log("Il 1500-simo UglyNumber è: " +(x-1))
+
+-----------------------------Esercizio-----------------------------------------
+
+// Scrivere un programma che preso in input, la dimensione di un array N e i suoi valori, ordini l'array in ordine crescente / decrescente
+
+MODO 1 
+
+let A:number[] = [];
+let volume:number = + prompt ("Quanti numeri vuoi inserire ?");
+
+for (let i=0; i < volume; i++) 
+{ 
+    let input:number = + prompt ("Inserisci il "+ (i+1) +"-o numero");
+    A.push(+input);
+}
+
+console.log(volume, A)
+
+function ordinaArray (array:number[], crescente:boolean):void
+{ 
+    for (let i=0; i< array.length-1; i++) 
+    {
+        for (let j=i+1; j< array.length; j++ )
+        { 
+            if (crescente)
+            {
+                if (array[i] < array[j])
+                {   
+                    let X = array[i];
+                    array[i] = array[j];
+                    array[j] = X;
+                } 
+            }
+            else
+            {   
+                if (array[i] > array[j])
+                {
+                    let X = array[i];
+                    array[i] = array[j];
+                    array[j] = X;
+                }
+            }           
+        } 
+    }
+}
+
+ordinaArray(A,false);
+// ordinaArray(A,true);
+console.log(A)
+
+--------
+MODO 2 
+
+let A:number[] = [];
+let volume:number = + prompt ("Quanti numeri vuoi inserire ?");
+
+for (let i=0; i < volume; i++) 
+{ 
+    let input:number = + prompt ("Inserisci il "+ (i+1) +"-o numero");
+    A.push(+input);
+}
+
+console.log(volume, A)
+
+function ordinaArray (array:number[]):number[]
+{ 
+    for (let i=0; i< array.length-1; i++) 
+    {
+        for (let j=i+1; j< array.length; j++ )
+        { 
+            if (array[i] < array[j])
+            {   
+                let X = array[i];
+                array[i] = array[j];
+                array[j] = X;
+            } 
+        } 
+    }
+    return array;
+}
+
+let crescente:number[] = ordinaArray(A);
+let decrescente:number [] = [];
+
+for (let i=crescente.length-1; i>=0; i--)
+{
+    decrescente.push(crescente[i]);
+}
+
+console.log(crescente);
+console.log(decrescente);
+
+--------
+MODO 3 
+
+let A:number[] = [];
+let volume:number = + prompt ("Quanti numeri vuoi inserire ?");
+
+for (let i=0; i < volume; i++) 
+{ 
+    let input:number = + prompt ("Inserisci il "+ (i+1) +"-o numero");
+    A.push(+input);
+}
+
+console.log(volume, A)
+
+function ordinaCrescente (array:number[]):number[]
+{ 
+    for (let i=0; i< array.length-1; i++) 
+    {
+        for (let j=i+1; j< array.length; j++ )
+        { 
+            if (array[i] > array[j])
+            {   
+                let X = array[i];
+                array[i] = array[j];
+                array[j] = X;
+            } 
+        } 
+    }
+    return array;
+}
+
+function ordinaDecrescente (array:number[]):number[]
+{ 
+    for (let i=0; i< array.length-1; i++) 
+    {
+        for (let j=i+1; j< array.length; j++ )
+        { 
+            if (array[i] < array[j])
+            {   
+                let X = array[i];
+                array[i] = array[j];
+                array[j] = X;
+            } 
+        } 
+    }
+    return array;
+}
+
+let crescente:number[] = ordinaCrescente(A);
+console.log("Cre " +crescente)
+
+let decrescente:number[] = ordinaDecrescente(A);
+console.log("DeCre " +decrescente)
+
