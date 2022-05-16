@@ -169,7 +169,7 @@ function isBisestile(anno:number):boolean {
     if ( anno%400 == 0 || anno%4 ==0 && anno%100 !=100) {
     return true;
     } else {
-        return false;
+    return false;
     }
 }
 
