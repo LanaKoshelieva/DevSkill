@@ -1,7 +1,0 @@
-{
-  "name": "isUgly",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

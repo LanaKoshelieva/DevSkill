@@ -1,0 +1,42 @@
+<ion-content class="body">
+  <ion-grid class="grid">
+
+    <!-- numeri da inserire -->
+    <ion-row>
+      <ion-item>
+        <ion-label position="stacked">Inserisci un numero per riempire l'array</ion-label>
+        <ion-input placeholder="numero" [(ngModel)]="input"></ion-input>
+      </ion-item>
+      <ion-button (click)="push(input)">Push</ion-button>
+    </ion-row>
+
+    <!-- array inserito -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Il tuo array</ion-label>
+          <ion-input placeholder="array" [(ngModel)]="tasca"></ion-input>
+        </ion-item>      
+      </ion-col> 
+    </ion-row>  
+    <ion-row>    
+      <ion-col class="select">
+        <ion-select [(ngModel)]="cresc" interface="popover" placeholder="Scegli modo da ordinare">
+          <ion-select-option value=0></ion-select-option>
+          <ion-select-option value=1>Crescente</ion-select-option>
+          <ion-select-option value=2>Decrescente</ion-select-option>
+        </ion-select>
+        <ion-button (click)="click()">Ordina</ion-button>    
+      </ion-col>
+    </ion-row>
+ 
+    <!-- array ordinato -->
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating"></ion-label>
+        <ion-input >{{risultato}}</ion-input>
+      </ion-item> 
+     </ion-row> 
+
+  </ion-grid>
+</ion-content>

@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'converter',
+    loadChildren: () => import('./pages/converter/converter.module').then( m => m.ConverterPageModule)
+  },
+  {
+    path: 'multi-converter',
+    loadChildren: () => import('./pages/multi-converter/multi-converter.module').then( m => m.MultiConverterPageModule)
+  },
 ];
 
 @NgModule({

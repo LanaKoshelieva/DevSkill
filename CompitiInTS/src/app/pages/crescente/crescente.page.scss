@@ -1,0 +1,18 @@
+.select {
+    max-width: 300px;
+}
+
+.body {
+    border: solid black 1px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.grid {
+    padding: 10%;
+}
+
+ion-button {
+    --background: rgb(143, 64, 64);
+    color: black;
+}

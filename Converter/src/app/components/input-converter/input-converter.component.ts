@@ -84,9 +84,9 @@ export class InputConverterComponent implements OnInit {
 
 
 
-  addEventoRipristino(value:string) {
-    this.addEventoRipristino.emit(value)
-  }
+  // addEventoRipristino(value:string) {
+  //   this.addEventoRipristino.emit(value)
+  // }
 
   constructor() { }
 

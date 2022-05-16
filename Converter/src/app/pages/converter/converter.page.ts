@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { InputConverterComponent } from 'src/app/components/input-converter/input-converter.component';
-import { EventEmitter } from 'stream';
+
 
 @Component({
   selector: 'app-converter',
