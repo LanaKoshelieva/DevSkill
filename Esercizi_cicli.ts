@@ -556,10 +556,17 @@ for (let i=0; i<10; i++)
     let nome:string = prompt("Inserisci il cognome del " + (i+1) + " giocatore")  
     let lower:string = nome.toLowerCase();
     cognomi.push(lower);
-    let votoA:number = +prompt("Inserisci il voto dell'attaco del " + (i+1) +  " giocatore")  
-    attacco.push(+votoA);
-    let votoD:number = +prompt("Inserisci il voto della difesa del " + (i+1) +  " giocatore")  
-    difesa.push(+votoD);
+    let votoA:number = +prompt("Inserisci il voto dell'attaco di " + lower)  
+    attacco.push(votoA);
+    let votoD:number = +prompt("Inserisci il voto della difesa di " + lower)  
+    difesa.push(votoD);
+}
+
+function scambia(arrayA:number[],i:number,j:number)
+{
+    let temp = arrayA[i];
+    arrayA[i] = arrayA[j];
+    arrayA[j] = temp;
 }
 
 function ordinaDecrescente (nomi:string[], ordinatore:number[], ordinato:number[]):void
@@ -570,18 +577,22 @@ function ordinaDecrescente (nomi:string[], ordinatore:number[], ordinato:number[
         { 
             if (ordinatore[i] < ordinatore[j])
             {   
-                let X = ordinatore[i];
-                ordinatore[i] = ordinatore[j];
-                ordinatore[j] = X;
-
-                let Y = nomi[i];
-                nomi[i] = nomi[j];
-                nomi[j] = Y;
-
-                let Z = ordinato[i];
-                ordinato[i] = ordinato[j];
-                ordinato[j] = Z;
+                scambia(ordinatore,i,j);
+                scambia(ordinato,i,j);
+                scambia(nomi,i,j);
             } 
+            else if (ordinatore[i] == ordinatore[j] && ordinato[i] > ordinato[j])
+            {   
+                scambia(ordinatore,i,j);
+                scambia(ordinato,i,j);
+                scambia(nomi,i,j);
+            }
+            else if (ordinatore[i] == ordinatore[j] && ordinato[i] == ordinato[j] && nomi[i] > nomi[j])
+            {   
+                scambia(ordinatore,i,j);
+                scambia(ordinato,i,j);
+                scambia(nomi,i,j);
+            }
         } 
     }
 }
@@ -592,9 +603,9 @@ console.log(cognomi, attacco, difesa)
 let nomiAttaccanti:string[] = [];
 let nomiDifensori:string[] = [];
 
-for (let i=0; i<10; i++) 
+for (let i=0; i<difesa.length; i++) 
 {
-    if(i<=4)
+    if(i<difesa.length/2)
     {
         nomiAttaccanti.push(cognomi[i])
     }
@@ -615,9 +626,7 @@ function ordinaCrescente (array:string[])
         { 
             if (array[i] > array[j])
             {   
-                let X = array[i];
-                array[i] = array[j];
-                array[j] = X;
+               scambia(array,i,j);
             } 
         } 
     }
