@@ -677,3 +677,33 @@ else
 
 console.log(array)
 console.log(su, giu)
+
+----------------------Esercizio 36 di 16.05-----------
+
+let X:number = +prompt ("Inserisci un numero X");
+let array:number[] = [];
+
+for (let i=0; i<10; i++)
+{
+    let input:number = +prompt ("Inserisci il " + (i+1) + " numero");
+    array.push(input);
+}
+
+let Z:number = 0;
+
+for (let j=0; j<array.length; j++)
+{
+    if (array[j] % X == 0) 
+    {
+        Z++
+    }
+}
+
+if (Z==0) 
+{
+    console.log("OK")
+}
+else
+{
+    console.log("NO")
+}
