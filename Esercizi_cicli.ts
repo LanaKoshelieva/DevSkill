@@ -678,7 +678,7 @@ else
 console.log(array)
 console.log(su, giu)
 
-----------------------Esercizio 36 di 16.05-----------
+----------------------Esercizio n36 di 16.05-----------
 
 let X:number = +prompt ("Inserisci un numero X");
 let array:number[] = [];
@@ -706,4 +706,96 @@ if (Z==0)
 else
 {
     console.log("NO")
+}
+
+----------------------Esercizio n7b di 16.05-----------
+
+let X:number = +prompt("Inserisci un numero qualsiasi");
+let N:number = +prompt("Quanto lungo deve essere l'aaray?");
+let array:number[] = [];
+
+
+for (let i=0; i<N; i++)
+{
+    let input:number = +prompt("Riempi il tuo array");
+    array.push(input);
+}
+console.log(array)
+
+let S:string = "";
+for (let i=0; i<N; i++)
+{
+    if (array[i]<X && (array[i]%2==0))
+    {
+        S = S + array[i];       
+    }
+}
+console.log(S)
+
+
+----------------------Esercizio n27 di 16.05-----------
+
+let N:number = +prompt("Inserisci un numero positivo intero");
+console.log(N);
+
+let numero:number = +prompt("Riempi il tuo array \n -1 per terminare");
+let array:number [] = [];
+
+if (numero<0)
+{
+    alert ("Inserisci numeri maggiori di 0")
+}
+else 
+{  
+    while (numero != -1)
+    {
+        array.push(numero);
+        numero = +prompt("Riempi il tuo array con dei numeri positivi interi\n -1 per terminare");
+        if (numero<-1 )
+        {
+        alert ("Inserisci numeri maggiori di 0")
+        }
+    }
+}
+console.log(array);
+
+let x:number = 0;
+for (let i=0; i<array.length; i++)
+{
+    if (array[i] <= N)
+    {
+        x++
+    }    
+}
+console.log(x)
+
+if (x>=N)
+{
+    console.log("OK")
+} else
+{
+    console.log("NO")
+}
+
+----------------------Esercizio n10 di 16.05-----------
+
+let N:string = prompt("Inserisci un numero intero positivo")
+
+let S:string = "";
+for (let i=N.length-1; i>=0; i--)
+{
+    S = S + N[i]
+}
+
+let A:number = +N;
+let B:number = +S;
+
+let risultato:number = (A-B);
+if (risultato < 0)
+{
+    console.log(risultato * (-1));
+}
+else 
+{
+    console.log(risultato);
 }
