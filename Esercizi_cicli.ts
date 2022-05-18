@@ -163,7 +163,7 @@ console.log(numeri_primi);
 
 ESERCIZI 05.05
 
------------------------------Esercizio 1-----------------------------------------
+-----------------------------------------------------------------Esercizio 1-----------------------------------------
 
 //Scrivere un programma che popoli due array A , B di dimensione N identica ed arbitraria ( min 5 , Max 10 ) i cui valori sono presi in input.
 //Successivamente creare un terzo array C di dimensione N dove nelle posizioni pari verranno inseriti i valori dell'array A e in quelle dispari i valori dell'array B
@@ -236,7 +236,7 @@ if (domanda<5 || domanda>10) {
 console.log("C: ", + C);
 }
 
------------------------------Esercizio 2-----------------------------------------
+-----------------------------------------------------------------Esercizio 2-----------------------------------------
 
 // Prendere in input una sequenza di numeri terminata da -1 e stampare a schermo la lunghezza della sequenza ripetuta piu` lunga.
 // Una sequenza e` la successione di numeri uguali e consecutiva senza interruzioni di almeno lunghezza 2
@@ -275,7 +275,7 @@ if (tascaMax <= 2) {
     console.log("Numero " + valore + " con la lunghezza " + tascaMax)
 }
 
------------------------------Esercizio 3-----------------------------------------
+-----------------------------------------------------------------Esercizio 3-----------------------------------------
 
 // Scrivere un programma che popoli due array A , B di dimensione N,M arbitraria ( min 5 , Max 10 ) i cui valori sono presi in input.
 // Successivamente creare un terzo array C di dimensione N+M dove nelle posizioni da 0 a N inserite i valori A e nelle posizioni da N+1 a M inserite i valori di B al contrario
@@ -317,7 +317,7 @@ if ((domandaA >= 5 && domandaB >= 5) && (domandaA <=10 && domandaB <=10)) {
     alert ("I valori devono essere compresi da 5 a 10");
 }
 
------------------------------Esercizio 3n +1 -----------------------------------------
+-----------------------------------------------------------------Esercizio 3n +1 -----------------------------------------
 
 let N1:number = numero();
 let N2:number = numero();
@@ -364,7 +364,7 @@ else {
 }
 console.log(N1, N2, risultatoMax )
 
------------------------------Esercizio Ugly numbers -----------------------------------------
+-----------------------------------------------------------------Esercizio Ugly numbers -----------------------------------------
 
 function isUgly (n:number):boolean 
 {
@@ -399,7 +399,7 @@ while (contare < 1500)
 }    
 console.log("Il 1500-simo UglyNumber è: " +(x-1))
 
------------------------------Esercizio-----------------------------------------
+-----------------------------------------------------------------Esercizio-----------------------------------------
 
 // Scrivere un programma che preso in input, la dimensione di un array N e i suoi valori, ordini l'array in ordine crescente / decrescente
 
@@ -545,7 +545,7 @@ let decrescente:number[] = ordinaDecrescente(A);
 console.log("DeCre " +decrescente)
 
 
------------------------------Esercizio giocatori di Maradona-----------------------------------------
+-----------------------------------------------------------------Esercizio giocatori di Maradona-----------------------------------------
 
 let cognomi:string[] = [];
 let attacco:number[] = [];
@@ -638,7 +638,7 @@ console.log(nomiAttaccanti)
 ordinaCrescente(nomiDifensori)
 console.log(nomiDifensori)
 
------------------------------Esercizio Mario che salva i muri-----------------------------------------
+-----------------------------------------------------------------Esercizio Mario che salva i muri-----------------------------------------------------------------------------
 
 let quantita:number = +prompt("Quanti quantita deve saltare Mario? \nMassimo numero di salti - 50");
 let array:number[] = [];
@@ -678,7 +678,7 @@ else
 console.log(array)
 console.log(su, giu)
 
-----------------------Esercizio n36 di 16.05-----------
+----------------------------------------------------------Esercizio n36 di 16.05-----------------------------------------------
 
 let X:number = +prompt ("Inserisci un numero X");
 let array:number[] = [];
@@ -689,17 +689,17 @@ for (let i=0; i<10; i++)
     array.push(input);
 }
 
-let Z:number = 0;
+let Y:number = 0;
 
 for (let j=0; j<array.length; j++)
 {
     if (array[j] % X == 0) 
     {
-        Z++
+        Y++
     }
 }
 
-if (Z==0) 
+if (Y==0) 
 {
     console.log("OK")
 }
@@ -708,7 +708,7 @@ else
     console.log("NO")
 }
 
-----------------------Esercizio n7b di 16.05-----------
+----------------------------------------------------------Esercizio n7b di 16.05-----------------------------------------------
 
 let X:number = +prompt("Inserisci un numero qualsiasi");
 let N:number = +prompt("Quanto lungo deve essere l'aaray?");
@@ -733,43 +733,49 @@ for (let i=0; i<N; i++)
 console.log(S)
 
 
-----------------------Esercizio n27 di 16.05-----------
+----------------------------------------------------------Esercizio n27 di 16.05-----------------------------------------------
 
 let N:number = +prompt("Inserisci un numero positivo intero");
 console.log(N);
 
-let numero:number = +prompt("Riempi il tuo array \n -1 per terminare");
 let array:number [] = [];
 
-if (numero<0)
-{
-    alert ("Inserisci numeri maggiori di 0")
-}
-else 
-{  
-    while (numero != -1)
+let numero:number = 0;
+while (numero != -1)
+{        
+    numero = +prompt("Riempi il tuo array con dei numeri positivi interi\n -1 per terminare");
+    if (numero<-1 )
+    {
+        alert ("Inserisci numeri maggiori di 0")
+    }
+    else
     {
         array.push(numero);
-        numero = +prompt("Riempi il tuo array con dei numeri positivi interi\n -1 per terminare");
-        if (numero<-1 )
-        {
-        alert ("Inserisci numeri maggiori di 0")
-        }
     }
 }
+
 console.log(array);
 
 let x:number = 0;
-for (let i=0; i<array.length; i++)
+let t:number = 0;
+for (let i=0; i<array.length-1; i++)
 {
     if (array[i] <= N)
     {
         x++
-    }    
+        if (x>t)
+        {
+            t = x;
+        }
+    }
+    else
+    {       
+        x = 0;
+    }      
 }
-console.log(x)
+console.log(t)
 
-if (x>=N)
+if (t>=N)
 {
     console.log("OK")
 } else
@@ -777,7 +783,7 @@ if (x>=N)
     console.log("NO")
 }
 
-----------------------Esercizio n10 di 16.05-----------
+----------------------------------------------------------Esercizio n10 di 16.05-----------------------------------------------
 
 let N:string = prompt("Inserisci un numero intero positivo")
 
@@ -798,4 +804,113 @@ if (risultato < 0)
 else 
 {
     console.log(risultato);
+}
+
+----------------------------------------------------------Esercizio n14 di 16.05-----------------------------------------------
+MODO 1
+
+function main()
+{
+    let array:number[] = [];
+    let input: number = 0;
+   
+    while (input != -1)
+    {
+        input = +prompt ("Riempi il tuo array \n-1 per terminare");
+        if (input != -1)
+        {
+            array.push(input);
+        }
+        
+    }
+    
+    if (array.length == 0)
+    {
+        console.log("VUOTO")
+        return;        
+    }
+    
+    let risultato:number = 0;
+    for (let i=0; i<array.length; i++)
+    {
+        if (array[i]<0 || array[i]>9)
+        {
+            console.log("ERRORE")
+            return;
+        }
+        let A:number = array.length - i - 1;
+        let T:number = array[i];
+        for (let j=0; j<A; j++)
+        {
+            T = T*10;
+        }
+        risultato = risultato + T;
+    }
+    if (risultato %3 == 0)
+    {
+        console.log("SI")
+    } 
+    else
+    {
+        console.log("NO")
+    }
+}
+
+main()
+
+------------------------------------
+MODO 1
+
+----------------------------------------------------------Esercizio n32 di 16.05-----------------------------------------------
+
+let array:number[] = [];
+let input: number = -1;
+    
+while (input != 0)
+{
+    input = +prompt ("Riempi il tuo array \n 0 per terminare");
+    if (input != 0)
+    {
+        array.push(input);
+    }    
+}
+
+let risultato = controlla(array);
+console.log(risultato);
+
+function controlla(a:number[]):string
+{
+    if (array.length == 0) 
+    {
+        return "NO";               
+    }
+    let crescente = true;
+    for (let i=0; i<array.length-1; i++)
+    {   
+        let j:number = i+1;
+        if (array[i] < array[j])
+        {
+            if (crescente == false)
+            {
+                return "NO";
+            }
+        }
+        else if (array[i] > array[j])
+        {
+            crescente = false; 
+            if (i == 0) 
+            {
+                return "NO";               
+            }
+        }
+        else 
+        {
+            return "NO";
+        }        
+    }
+    if (crescente == true)
+    {
+        return "NO"
+    }
+    return "OK";
 }
