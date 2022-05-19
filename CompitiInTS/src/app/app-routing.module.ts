@@ -35,6 +35,14 @@ const routes: Routes = [
     path: 'decrescente',
     loadChildren: () => import('./pages/decrescente/decrescente.module').then( m => m.DecrescentePageModule)
   },
+  {
+    path: 'n14',
+    loadChildren: () => import('./pages/n14/n14.module').then( m => m.N14PageModule)
+  },
+  {
+    path: 'n7b',
+    loadChildren: () => import('./pages/n7b/n7b.module').then( m => m.N7bPageModule)
+  },
 ];
 
 @NgModule({

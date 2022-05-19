@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-item>
+        <ion-label>Riempi il tuo array. <br>Inserisci -1 per terminare</ion-label>
+        <ion-input [(ngModel)]=""></ion-input>
+        <ion-button (click)="stampa()">Controlla</ion-button>   
+      </ion-item>
+
+    </ion-row>
+    <ion-row class="risultato">
+      <p>{{S}}</p>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

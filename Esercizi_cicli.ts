@@ -790,7 +790,7 @@ let N:string = prompt("Inserisci un numero intero positivo")
 let S:string = "";
 for (let i=N.length-1; i>=0; i--)
 {
-    S = S + N[i]
+    S = S + N[i];
 }
 
 let A:number = +N;
@@ -859,7 +859,49 @@ function main()
 main()
 
 ------------------------------------
-MODO 1
+MODO 2
+
+function main()
+{
+    let array:number[] = [];
+    let input: number = 0;
+
+    while (input != -1)
+    {
+        input = +prompt ("Riempi il tuo array \n-1 per terminare");
+        if (input != -1)
+        {
+            array.push(input);
+        }    
+    }
+
+    if (array.length == 0)
+    {
+        console.log("VUOTO");
+        return;
+    }
+
+    let S:string = "";
+    for (let i=0; i<array.length; i++)
+    {
+        if (array[i]<0 || array[i]>9)
+        {
+            console.log("ERRORE");
+            return
+        }
+        S = S + array[i];
+    }
+
+    if (+S %3 == 0)
+    {
+        console.log("SI");
+    }
+    else
+    {
+        console.log("NO");
+    }
+} 
+main()
 
 ----------------------------------------------------------Esercizio n32 di 16.05-----------------------------------------------
 
