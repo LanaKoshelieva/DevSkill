@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'crescente',
+    redirectTo: 'n7b',
     pathMatch: 'full'
   },
   {
@@ -34,10 +34,6 @@ const routes: Routes = [
   {
     path: 'decrescente',
     loadChildren: () => import('./pages/decrescente/decrescente.module').then( m => m.DecrescentePageModule)
-  },
-  {
-    path: 'n14',
-    loadChildren: () => import('./pages/n14/n14.module').then( m => m.N14PageModule)
   },
   {
     path: 'n7b',

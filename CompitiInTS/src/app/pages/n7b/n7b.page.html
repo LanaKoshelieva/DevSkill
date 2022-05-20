@@ -1,16 +1,49 @@
-<ion-content>
+<ion-content class="body">
   <ion-grid class="grid">
+    <ion-row class="hidden">
+      <p [hidden]="isButtonDisabled">{{hidden}}</p>
+    </ion-row>
     <ion-row>
-      <ion-item>
-        <ion-label>Riempi il tuo array. <br>Inserisci -1 per terminare</ion-label>
-        <ion-input [(ngModel)]=""></ion-input>
-        <ion-button (click)="stampa()">Controlla</ion-button>   
-      </ion-item>
+    <ion-col class="my-item">
+        <ion-item class="my-item">
+          <ion-label position="floating">Inserisci un numero</ion-label>
+          <ion-input [(ngModel)]="X"></ion-input> 
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="pushX(X)">Passa</ion-button>  
+      </ion-col>      
+    </ion-row>
+ 
+    <ion-row>
+      <ion-col class="my-item">
+        <ion-item>
+          <ion-label position="floating">Inserisci la lunghezza dell'array</ion-label>
+          <ion-input [(ngModel)]="N"></ion-input> 
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="pushN(N)">Passa</ion-button>  
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col class="my-item">
+        <ion-item>
+          <ion-label position="floating">Riempi il tuo array</ion-label>
+          <ion-input [(ngModel)]="input"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="push(input)" [disabled]="isButtonDisabled">Passa</ion-button>   
+      </ion-col>
     </ion-row>
+
     <ion-row class="risultato">
-      <p>{{S}}</p>
-    </ion-row>
+      <ion-col>
+        <p>{{S}}</p>
+      </ion-col>
+    </ion-row>    
 
   </ion-grid>
 
