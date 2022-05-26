@@ -956,3 +956,89 @@ function controlla(a:number[]):string
     }
     return "OK";
 }
+
+----------------------------------------------------------Esercizio 1 di 25.05-----------------------------------------------
+// Verificare se una parola e` palindroma .
+// Una parola si dice palindroma se letta al contrario ha lo stesso valore
+
+let parola:string = prompt("Inserisci una parola");
+let parolaInversa:string = "";
+
+for (let i=parola.length-1; i>=0; i--)
+{
+    parolaInversa = parolaInversa + parola[i];
+}
+
+console.log(parola)
+console.log(parolaInversa)
+
+if (parola != parolaInversa)
+{
+	console.log(false)
+}
+else
+{
+	console.log(true)
+}
+
+----------------------------------------------------------Esercizio 2 di 25.05-----------------------------------------------
+// Prese in input due parole
+// Creare una terza parola, composta dalla prima e dall'inverso della seconda.
+
+function inserisciParola():string
+{
+   return prompt("Inserisci una parola");   
+}
+
+let parolaA:string = inserisciParola();
+let parolaB:string = inserisciParola();
+
+console.log(parolaA);
+console.log(parolaB);
+
+let inversaB:string = ""
+
+for (let i=parolaB.length-1; i>=0; i--) 
+{
+    inversaB = inversaB + parolaB[i];    
+}
+console.log(inversaB);
+
+let parolaComposta:string = parolaA + inversaB
+console.log(parolaComposta);
+
+----------------------------------------------------------Esercizio 3 di 25.05-----------------------------------------------
+// Prese in input due parole
+// Creare una terza parola, composta dalle lettere della prima e della seconda in maniera alternata.
+
+function inserisciParola():string
+{
+    return prompt("Inserisci una parola")
+}
+
+let parola1:string = inserisciParola();
+let parola2:string = inserisciParola();
+
+function creaComposta(a:string, b:string):string
+{
+    if (a.length != b.length)
+    {
+       alert("La lunghezza delle parole deve essere uguale")
+       return "";
+    }
+    let composta:string = "";
+    for (let i=0; i<a.length; i++)
+    {
+        if (i%2 == 0)
+        {
+            composta = composta + a[i]; 
+        }
+        else
+        {
+            composta = composta + b[i]; 
+        }
+    }
+    return composta;
+}
+
+console.log(creaComposta(parola1, parola2))
